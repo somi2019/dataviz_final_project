@@ -93,9 +93,12 @@ This *mini project* will review marathon result dataset in different countries i
 It seemes women are more eager to marathon when they are younger,specially when they are *25* and again when they are around *40*,but as they becoe older,they lose eagerness to run,but in reverse men become interested to marathon slow by slow when they become older,specifically when they become *40,45,50* they love to join marathon races.after turning to *50* always more number of men are interested to run compare to women.
 
 ![02](https://user-images.githubusercontent.com/70166302/100644274-1d0c4e00-3309-11eb-9964-91bf22a04bc7.png)
+Intersting point in this plot is *Female runnersare younger than male runners* in first quartile, median and third quartile.Median for women is at their 40 but for men is at their *45*.
 
 
-
+This plot shows that if we like or dislike , **age**is really important!
+As you see when people are between *20 to 40* years old average finishing time is much less compare to when they become older.
+Second interesting point is that usually in all periods of life men finish a marathon race sooner than women.Specially when they are so old *(after 70 years old)* men run more faster than women.
 ## Project 03
 
 In this project, I explored ... _[short description of your revised project goes here]_
