@@ -85,14 +85,15 @@ To continue focusing on one specific country, using *geom_point* it can be seen 
 
 ## Project 02
 
-In this project, I explored ... _[short description of your revised project goes here]_ Find the code and report in the `project_02/` folder.
+# Mini Project(**marathon result 2017**)
+---
+This *mini project* will review marathon result dataset in different countries in 2017,with some main variables such as gender,age,overal ranking,city,country which I worked on them mainly also some other variable to be used created for this report such as finishing time.
 
-**Sample data visualization:** 
+![01](https://user-images.githubusercontent.com/70166302/100644005-bf780180-3308-11eb-88ff-f99a7cde01c4.png)
+It seemes women are more eager to marathon when they are younger,specially when they are *25* and again when they are around *40*,but as they becoe older,they lose eagerness to run,but in reverse men become interested to marathon slow by slow when they become older,specifically when they become *40,45,50* they love to join marathon races.after turning to *50* always more number of men are interested to run compare to women.
 
-_[include your favorite visualization from this project here]_
-<img src="https://github.com/reisanar/dataviz_final_project/blob/main/figures/fl_higher_ed.png" width="60%" height="60%">
 
-(you can also place your figures in the `figures/` folder and use the `![](path_to_picture)` option to add the pictures here)
+
 
 
 ## Project 03
