@@ -105,6 +105,11 @@ Again we see there is a *gender gap* between male and female. on average male ru
 This gap is greater among the runners who finish sooner than among those who finish last.
 The peak finish time for male crossed finished line was in *13237 sec*  and *14825 sec* for female.  
 
+![05](https://user-images.githubusercontent.com/70166302/100645235-627d4b00-330a-11eb-9e1d-340ca300db1d.png)
+This plot shows *overall rank* of a runner with its *gender* in finishing time of less than *9000* seconds*.
+First one is a male who finishes in 7750 seconds and the first fast female runner finishes at *8600* seconds and her rank is *21th*.
+
+
 ## Project 03
 
 In this project, I explored ... _[short description of your revised project goes here]_
