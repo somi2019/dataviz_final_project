@@ -109,6 +109,12 @@ The peak finish time for male crossed finished line was in *13237 sec*  and *148
 This plot shows *overall rank* of a runner with its *gender* in finishing time of less than *9000* seconds*.
 First one is a male who finishes in 7750 seconds and the first fast female runner finishes at *8600* seconds and her rank is *21th*.
 
+![06](https://user-images.githubusercontent.com/70166302/100647001-dae50b80-330c-11eb-8463-548e04a2c21a.png)
+There is a *correlation* between finishing time and half time finishing in **USA**.
+
+
+
+
 
 ## Project 03
 
