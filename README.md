@@ -112,9 +112,8 @@ First one is a male who finishes in 7750 seconds and the first fast female runne
 ![06](https://user-images.githubusercontent.com/70166302/100647001-dae50b80-330c-11eb-8463-548e04a2c21a.png)
 There is a *correlation* between finishing time and half time finishing in **USA**.
 
-
-
-
+![07](https://user-images.githubusercontent.com/70166302/100647207-2ac3d280-330d-11eb-98de-ef5068a2716e.png)
+Filtering the first *20* runners,then plot overall ranks of them versus finishing time.First runners finish it in *7777 seconds*,second one in 20 seconds later. The last one in *8418 seconds*,so they really finish the race in a very close range.
 
 ## Project 03
 
