@@ -92,7 +92,7 @@ This *mini project* will review marathon result dataset in different countries i
 ![01](https://user-images.githubusercontent.com/70166302/100644005-bf780180-3308-11eb-88ff-f99a7cde01c4.png)
 It seemes women are more eager to marathon when they are younger,specially when they are *25* and again when they are around *40*,but as they becoe older,they lose eagerness to run,but in reverse men become interested to marathon slow by slow when they become older,specifically when they become *40,45,50* they love to join marathon races.after turning to *50* always more number of men are interested to run compare to women.
 
-
+![02](https://user-images.githubusercontent.com/70166302/100644274-1d0c4e00-3309-11eb-9964-91bf22a04bc7.png)
 
 
 
