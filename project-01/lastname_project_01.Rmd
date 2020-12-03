@@ -9,4 +9,254 @@ output:
 
 # Data Visualization Project 01
 
-_revised version of mini-project 01 goes here_
+# Somayeh Sadeghizadeh
+# Email:ssadeghizadeh8676@floridapoly.edu
+
+---
+# Mini Project:
+
+For this *mini project* I worked on world cup matches dataset, which includes matches during 1930 to 2014 held in different cities between different teams with some main variables which I worked on them mainly such as Home team goals, away team goals, audience also some other variable to be used created for this report such as total goals.
+Here I listed some *main steps* to start working on this dataset:
+
+**Step 1**: Using the function read_csv() to read and variables are assigned for further use.
+
+**Step 2**: Datasets are checked for any duplicate rows and only distinct rows are kept. After removal of duplicates, the dimensions of both the datasets are checked.
+
+**Step 3**: As some variables are not needed at all in this report, I deleted some of them, for this task, function subset () was used.
+
+**Step 4**: The structure of this dataset is displayed using the str () function.
+
+**Step 5**: using the function Separate () to split the ‘Date’ and ‘Time’ as 2 different columns. then format the separated columns. using head () function to see some first rows of the new table.
+
+**Step6**: Creating 3 new variable by using the mutate function: Home_Sec_Half and Away_Sec_Half, total to find if scores gain in final minutes or not. Also, total goals which helps to find total score after each match.
+
+**Step7**: dataset is checked for missing values and obvious errors (functions colSums() and is.na())
+
+```{r }
+library(tidyverse)
+library(dplyr)
+WC_Matches<- read_csv("https://raw.githubusercontent.com/reisanar/datasets/master/WorldCupMatches.csv")
+WC_Matches
+#check for duplicates and subset only distinct rows
+WC_Matches_distinct<-WC_Matches%>%distinct()
+WC_Matches_distinct
+#check dimensions
+dim(WC_Matches_distinct)
+#(deleting unnecessary coloumns in this analysis)
+WC_Matches_new <- subset(WC_Matches_distinct[,c(1,2,5,6,7,8,9,10,11,12,13,17,18,19,20)] )
+#Viewing the subset
+head(WC_Matches_new)
+```
+
+
+
+```{r cars}
+str(str(WC_Matches_new))
+```
+
+```{r}
+library(dplyr)
+WC_Matches_new <- WC_Matches_new %>% tidyr::separate(Datetime,into = c("Date", "Time"),sep =" - ")
+WC_Matches_new$Date <- as.Date(WC_Matches_new$Date, format = "%d %b %Y")
+#Confirming the structure of the 'Date' Column
+str(WC_Matches_new$Date)
+```
+
+
+```{r }
+WC_Matches_new$Time <- hms::parse_hm(WC_Matches_new$Time)
+#Confirming the structure of `Time` Column
+str(WC_Matches_new$Time)
+```
+
+```{r}
+head(WC_Matches_new)
+```
+```{r}
+#Creating 3 new variable by using the mutate function
+WC_Matches_new<- mutate(WC_Matches_new,Home_Sec_Half = WC_Matches_new$`Home Team Goals` - WC_Matches_new$`Half-time Home Goals`, Away_Sec_Half= WC_Matches_new$`Away Team Goals`- WC_Matches_new$`Half-time Away Goals`,Total_Goals = WC_Matches_new$`Home Team Goals` + WC_Matches_new$`Away Team Goals`)
+#Displaying the dataset 
+head(WC_Matches_new)
+```
+
+```{r}
+#remove spaces from column names
+names(WC_Matches_new) <- make.names(names(WC_Matches_new), unique=TRUE)
+head(WC_Matches_new)
+```
+```{r}
+#check for missing values
+colSums(is.na(WC_Matches_new))
+```
+# Analysis:
+## After making data tidy,we start to analyse the data:
+
+* **Audiences Distribution**: After making data tidy, I started analysis of data by drawing a *histogram* of audiences: We can see in the graphs that the data is skewed to the right.
+* **Total Goals Distribution**: Checking the distribution of total goals using the *hist () function*. We can see total goals in the graphs are skewed to the right.
+* **Boxplot**: Checking *median* and *outliers* for home team goal box variable through boxplot for 3 different variables.
+
+```{r}
+ggplot(data =WC_Matches_new) + geom_histogram(aes(x = Attendance),binwidth = 10000,fill="BLUE")+labs(title="Attendance Distribution")+theme(plot.title = element_text(size = 20, face = "bold",color="tomato"))
+```
+
+Checking the distribution of both the variables using the hist() function. We can see in the graphs that the data is *skewed to the right*.
+```{r}
+ggplot(data =WC_Matches_new) + geom_histogram(aes(x =Total_Goals),fill="blue")+labs(title="Total Goals Distribution")+theme(plot.title = element_text(size = 20, face = "bold",color="tomato"))
+```
+
+Checking the distribution of both the variables using the hist() function. We can see total goals in  the graphs are *skewed to the right*.
+```{r}
+library(ggthemes)
+ggplot(WC_Matches_new,aes(Total_Goals))+geom_boxplot(fill = "white", colour = "#532d8e",outlier.colour = "red")+scale_color_brewer()+theme_bw()+labs(title="Boxplot of Total Goals",x="Total team score")+theme(axis.title.x = element_text(vjust = 5,size = 12,face = "bold"))+theme(plot.title = element_text(size = 20, face = "bold",color="tomato"))
+
+```
+
+Checking median and outliers for total box variable through boxplot.the **median** for this variable is around 3 goals and outliers starts from 9 goals.
+
+
+```{r}
+ggplot(WC_Matches_new,aes(Home.Team.Goals))+geom_boxplot(fill = "white", colour = "#532d8e",outlier.colour = "red")+scale_color_brewer()+theme_bw()+labs(title="Boxplot of Home Team  Goals",x="Home team score")+theme(axis.title.x = element_text(vjust = 5,size = 12,face = "bold"))+theme(plot.title = element_text(size = 20, face = "bold",color="tomato"))
+```
+
+Checking median and outliers for home team goal box variable through boxplot.the **median** for this variable is 2 goals and outliers starts from 7 goals.
+
+```{r}
+ggplot(WC_Matches_new,aes(Away.Team.Goals))+geom_boxplot(fill = "white", colour = "#532d8e",outlier.colour = "red")+scale_color_brewer()+theme_bw()+labs(title="Boxplot of Away Team  Goals",x="Away team score")+theme(axis.title.x = element_text(vjust = 5,size = 12,face = "bold"))+theme(plot.title = element_text(size = 20, face = "bold",color="tomato"))
+```
+
+Checking median and outliers for Away team goal box variable through boxplot.the **median** for this variable is 1 goals and outliers starts from 7 goals.
+```{r}
+WC_Matches_new%>%
+filter(Total_Goals>=7)%>%
+ggplot(aes(x =Home.Team.Name,y =Total_Goals,fill=Home.Team.Goals)) + geom_col()+theme(axis.text.x =element_text(angle=65,vjust=0.6))+labs(title = "Total Goals in HomeTown Plays")+theme(axis.title.x = element_text(vjust = 5,size = 12,face = "bold"))+theme(plot.title = element_text(size = 20, face = "bold",color="tomato"))
+```
+
+* **Total Goals in Hometown Plays**: Checking number of total goals for matches with higher goals which were played in hometowns, using (geom_col) filling with Home Team Goals and using element _text to have clear presentation to show high numbers in **Brazil** and **Hungary**.
+
+```{r}
+# Remove outliers when overlaying boxplot with original data points
+WC_sub <-WC_Matches_new %>%
+filter(Total_Goals>4) %>%
+mutate(more_goals =ifelse(Total_Goals> 5, Total_Goals, ""))
+p <- ggplot(WC_sub, aes(Home.Team.Initials,Total_Goals))  
+p + geom_boxplot(outlier.shape = NA)+theme_bw(base_size = 15)+theme(axis.text.x =element_text(angle=65,vjust=0.6))+labs(title="Total Goals in Hometown")+theme(plot.title = element_text(size = 18, face = "bold",color = "tomato", hjust = 0.5,lineheight = 1.1))+geom_jitter(color="red",width=0.2)
+```
+
+* **Total Goals in Hometown**: to see *median* and *outliers* for every home team matches, in another plot I used *boxplot* and *geom_jitter*.to see the details more obvious.
+```{r}
+WC_Matches_new %>%
+na.omit() %>%
+filter(Attendance >70000 & Attendance < 150000) %>%
+ggplot(aes(x = Home.Team.Initials, y = Attendance)) +
+geom_point(color = "darkorchid4") +
+facet_wrap(~ City ) +
+labs(title = "Attendance in HomeTown",
+subtitle = "Use facets to plot by City variable",y = "Attendance",
+x = "Home.Team.Initials") + theme_bw(base_size = 15)+theme(axis.text.x =element_text(angle=65,vjust=0.6))+theme(plot.title = element_text(size = 20, face = "bold",color="tomato"))
+```
+
+* **Attendance in Home Town** : to show Drawing number of attendances in home team matches in different cities, attendance in cities like **London** and **Mexico City** and **Los Angeles** were more than other cities for, to be more specific I filtered number of audiences between 70,000 to 150,000 and used the function of facet_wrap to separate cities.
+```{r}
+WC_sub <-WC_Matches_new  %>%
+ filter(Attendance>100000) %>%
+ mutate(large_Attendance = ifelse( Attendance> 50000, Total_Goals, ""))
+ggplot(data=WC_sub,aes(x =Home.Team.Name,y =Attendance,
+fill = Total_Goals)) + geom_col() +
+guides(fill = FALSE)+theme_classic()+labs(x = "",title = "Attendance VS.HomeTeamName")+labs(subtitle = "More than 50000 attendance")+theme(plot.title = element_text(size = 20, face = "bold",color = "tomato", hjust = 0.5,lineheight = 1.2),plot.subtitle = element_text(size = 15, face = "bold",hjust = 0.5),plot.caption = element_text(size = 15),
+# X axis title
+axis.title.x = element_text(vjust = 10,
+size = 15),
+# Y axis title
+axis.title.y = element_text(size = 15),
+# X axis text
+axis.text.x = element_text(size = 12, angle = 30, vjust = .5), # Y axis text
+axis.text.y = element_text(size = 10))
+```
+
+* **Attendance VS. Home Team Name (More than 50000 attendance)**: Another format for checking games with high number of audiences for hometown games filled with total goals, in **Brazil** and **Mexico** had most audiences in home town matches.
+
+
+* With mutate function winning team variable is created to check some more items:
+```{r}
+WC_Matches_new1<-WC_Matches_new %>% 
+mutate(winning_team = case_when(Home.Team.Goals > Away.Team.Goals ~ Home.Team.Name,TRUE ~ Away.Team.Name)) %>% 
+select(1:8, winning_team, everything())
+head(WC_Matches_new1)
+```
+```{r}
+library(ggthemes)
+WC_Matches_new1 %>%
+ggplot(data=na.omit(WC_Matches_new1),mapping=aes(x=winning_team,y=Attendance,color=City))+geom_point()+labs(title="Attendance of Winning Teams with the Location of Game")+ theme(plot.title=element_text(size=15,face="bold",color="tomato",hjust=0.5,lineheight =0.1),axis.title.x = element_text(vjust=5,size=2))+scale_color_discrete(name="city")+scale_y_continuous(trans = "log10") + annotate("text",x=22,y=8000,label="Few Attendance!")+
+theme(axis.text.x=element_text(angle=55,vjust=0.6))+annotate(geom = "point",x = 22, y = 6000, size = 4)+ 
+ guides(color = FALSE)
+```
+
+
+* **Attendance of Winning Teams with the Location of Game**: This plot shows relationship of attendance vs winning teams and the location of matches are colored disceretly,also Netherland match there were fewest attendance to watch the game.
+```{r}
+library(ggthemes)
+library(ggrepel)
+WC_sub <-WC_Matches_new  %>%
+filter(Attendance>100000) %>%
+mutate(large_Attendance = ifelse( Attendance>80000, City,""))
+ggplot(data=WC_sub,aes(x =Total_Goals,y =Attendance,
+fill = City)) + geom_col() +
+guides(fill = FALSE) +theme_wsj()+theme(axis.text.x =element_text(angle=65,vjust=0.5))+
+labs(x = "",title = "Attendance VS. TotalGoals")+theme(legend.position ="None")+
+labs(subtitle = "With City label") +
+theme(legend.position = "None")+geom_text_repel(aes(label = large_Attendance),
+size = 2,
+data = WC_sub)
+```
+
+* **Attendance VS. Total Goals**: To see more details, filtered number of audiences for more than 90000 people and checked it versus number of total goals with the label of city on the games.as it can be seen for 2 goals games there were the most attendances in **Rio De Janiro**, using the label of cities on the plot.
+```{r}
+library(hues)
+ggplot(data=na.omit(WC_Matches_new1),mapping=aes(x=Date,y=Attendance,color = winning_team))+geom_point()+labs(title="Attendance vs. Date")+theme_bw() + theme(legend.position = "bottom")+scale_colour_iwanthue()+theme(plot.title = element_text(size = 20, face = "bold",color="tomato"))
+```
+
+* **Attendance vs. Date**: Plot shows relation of attendance versus the year the match was held, it is also colored by winning team, using the scale_colour_iwanthue() function and  palette of hues which has lots of colors for qualitative variable. **Italy** in *1970* has the most audiences more than *100,000* people.
+
+```{r}
+library(ggrepel)
+WC_Matches_USA <- WC_Matches_new %>%
+filter(Home.Team.Name == "USA")
+ggplot(WC_Matches_USA,
+aes(x = Home.Team.Goals,y =Away.Team.Goals)) +
+geom_point() +
+geom_label_repel(aes(label = Away.Team.Name))+annotate(geom = "text",
+ x = 1.5, y = 4,
+ label = "Name of Away cities")+labs(title="Away team goals vs. Home team goals in USA ")+theme(plot.title = element_text(size = 20, face = "bold",color="tomato"))
+ 
+```
+
+* **Away team goals vs. Home team goals in USA**: to check one country situations specifically **USA** home team goals vs. away team goals was considered, there were 5 away team goals for **Czechoslovakia** and 1 home team goals for USA, also 3 goals for USA and 0 for **Paraguay**, this way we can check every country more specifically. For writing on the plot, used annotate function and geom_label_repel to have rectangle labels.
+```{r}
+WC_Matches_USA %>%
+filter(Home.Team.Name =="USA")%>%
+ggplot(aes(x=Year, y=Total_Goals)) +
+geom_point() +
+theme(axis.text.x = element_text(angle = 90, hjust = 1,vjust = 0.5, size = 12), 
+ axis.text.y = element_text(size = 12),strip.text = element_text(size = 12),axis.title = element_text(size = 12)) +facet_wrap(~ Away.Team.Name)+
+labs(x = "",y = "Total Goals",title = "Total goals in USA matches over the years ")+theme(plot.title = element_text(size = 20, face = "bold",color="tomato"))
+```
+
+* **Total goals in USA matches over the years**: To continue focusing on one specific country, using geom_point it can be seen than during the year’s total goals of a match to be more obvious I used facet wrap function to show the away team player. For instance, in play with **Czechoslovakia** there were total of 6 goals in *1990*.
+```{r}
+ggplot(data=WC_Matches_new1,aes(x =winning_team,y =Home.Team.Goals)) + geom_col(color="blue")+theme(axis.text.x =element_text(angle=65,vjust=0.6))+labs(title="Home Team Goals for winning team ")+theme(plot.title = element_text(size = 20, face = "bold",color = "tomato"))
+```
+
+* **Home Team Goals for winning team**: graph number of total goals are shown versus to winning team names,in matches which **Brazil** had played as one side there were lots of goals.
+ 
+# Conclusion:
+
+* According to histograms of Attendance and Total Goals as we see skewness in both plot,so if we want to have more specicific result,it is better to normalize them at first then work on data.
+* Acoording to boxplot plots outliers for home team and away team goals are *7* and for total goals are *9* that should be considered in our analysis.
+* Teams of **Brazil** and **Hungary** had the most *Total Goals* in home town matches.
+* For audiences between *70,000 *to *150,000* Number of attendance in cities like **London** and **Mexico City** and **Los Angeles** were the most in *home town* matches.
+* For More than *50,000* attendance Teams of **Brazil** and **Mexico** had most audiences in home town matches.
+* For audiences  more than *90,000* for  games with 2 goals there were the most attendances in **Rio De Janiro**.
+* **Italy** in *1970* has the most audiences more than *100,000* people.
+* specifically for **USA** home team goals vs. away team goals was considered, there were 5 away team goals for **Czechoslovakia** and 1 home team goals for USA, also 3 goals for USA and 0 for **Paraguay**.
+* In matches which **Brazil** had played as one side there were lots of goals.
+
