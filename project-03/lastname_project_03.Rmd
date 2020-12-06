@@ -10,9 +10,6 @@ output:
 # Data Visualization Project 03
 
 
-# Data Visualization Project 03
-
-
 In this exercise you will explore methods to visualize text data and practice how to recreate charts that show the distributions of a continuous variable. 
 
 
