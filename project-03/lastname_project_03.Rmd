@@ -22,61 +22,110 @@ Using the dataset obtained from FSU's [Florida Climate Center](https://climatece
 
 ```{r, message=FALSE, warning=FALSE}
 library(tidyverse)
-weather_tpa <- read_csv("https://github.com/reisanar/datasets/raw/master/tpa_weather_16_17.csv")
-# random sample 
-sample_n(weather_tpa, 4)
+Tampa_Weather<-read_csv("https://github.com/reisanar/datasets/raw/master/tpa_weather_16_17.csv")
+sample_n(Tampa_Weather,4)
 ```
 
-See https://www.reisanar.com/slides/relationships-models#10 for a reminder on how to use this dataset with the `lubridate` package for dates and times.
-
-
-(a) Recreate the plot below:
-
-```{r, echo = FALSE, out.width="80%", fig.align='center'}
-knitr::include_graphics("https://github.com/reisanar/figs/raw/master/tpa_max_temps_facet.png")
+```{r}
+library(lubridate)
+tpa_clean <- Tampa_Weather %>% 
+  unite("doy", year, month, day, sep = "-") %>% 
+  mutate(doy = ymd(doy), 
+         max_temp = as.double(max_temp), 
+         min_temp = as.double(min_temp), 
+         precipitation = as.double(precipitation))
 ```
 
-Hint: the option `binwidth = 3` was used with the `geom_histogram()` function.
 
-(b) Recreate the plot below:
+## Part 1: Density Plots
+```{r}
+Tampa_Weather %>%
+ggplot(aes(x=max_temp)) +
+geom_histogram(color = "darkorchid4",fill="green",binwidth = 3) +
+theme(axis.text.x = element_text(angle = 90, hjust = 1,vjust = 0.5, size = 12), 
+ axis.text.y = element_text(size = 12),strip.text = element_text(size = 12),axis.title = element_text(size = 12)) +facet_wrap(~ month)+scale_fill_viridis_d()+
+labs(x = "Maximum Temperature",y = "Number of Days",title = "Density of Hottest Days in Tampa ")+theme(plot.title = element_text(size = 20, face = "bold",color="tomato"))
 
-```{r, echo = FALSE, out.width="80%", fig.align='center'}
-knitr::include_graphics("https://github.com/reisanar/figs/raw/master/tpa_max_temps_density.png")
 ```
 
-Hint: check the `kernel` parameter of the `geom_density()` function, and use `bw = 0.5`.
+```{r}
 
-(c) Recreate the chart below:
+ggplot(data =Tampa_Weather,mapping = aes(x = max_temp)) +
+geom_density(bw=0.5,fill="#808080", color="black")+ 
+theme(axis.text.x = element_text(angle = 90, hjust = 1,vjust = 0.5, size = 10), 
+ axis.text.y = element_text(size = 12),strip.text = element_text(size = 12),axis.title = element_text(size = 12))+ 
+labs(x = "Maximum Temperature",y = "Number of Days",title = "Density of hottest days in Tampa ")+theme(plot.title = element_text(size = 20, face = "bold",color="tomato"))+theme_bw()
 
-```{r, echo = FALSE, out.width="80%", fig.align='center'}
-knitr::include_graphics("https://github.com/reisanar/figs/raw/master/tpa_max_temps_density_facet.png")
 ```
 
-Hint: default options for `geom_density()` were used. 
 
-(d) Recreate the chart below:
 
-```{r, echo = FALSE, out.width="80%", fig.align='center'}
-knitr::include_graphics("https://github.com/reisanar/figs/raw/master/tpa_max_temps_ridges.png")
+
+```{r  }
+p<-ggplot(Tampa_Weather,aes(x=max_temp)) +
+geom_density(binwidth = 3,fill="green") +
+theme(axis.text.x = element_text(angle = 90, hjust = 1,vjust = 0.5, size = 12), 
+ axis.text.y = element_text(size = 12),strip.text = element_text(size = 12),axis.title = element_text(size = 12)) +facet_wrap(~ month)+
+labs(x = "Maximum Temperature",y = "Number of Days",title = "Density plot for each month in 2016 ")+theme(plot.title = element_text(size = 20, face = "bold",color="black"))+scale_fill_viridis_c()
+p+ scale_fill_viridis_d()
 ```
 
-Hint: default options for `geom_density()` were used. 
+```{r}
+library(ggridges)
 
-(e) Recreate the plot below:
+p <- ggplot(data = Tampa_Weather,
+            mapping = aes(x = max_temp, y = factor(month, levels = rev(unique(month)),
+                                     ordered = TRUE)))
+p + geom_density_ridges(alpha = 0.6, fill = "yellow", scale = 1.5) +
+    stat_density_ridges(quantile_lines = TRUE, quantiles = 0.5,fill = "yellow", colour = "black")+
+    scale_y_discrete(expand = c(0.01, 0)) + 
+    labs(x = "Maximum Temperature", y = NULL,
+         title = "Temperature Distribution in different months") +
+    theme_ridges() +scale_fill_viridis_d()+
+    theme(title = element_text(size = 16, face = "bold"))
 
-```{r, echo = FALSE, out.width="80%", fig.align='center'}
-knitr::include_graphics("https://github.com/reisanar/figs/raw/master/tpa_max_temps_ridges.png")
+
 ```
 
-Hint: use the`ggridges` package, and the `geom_density_ridges()` function paying close attention to the `quantile_lines` and `quantiles` parameters.
 
-(f) Recreate the chart below:
+```{r}
+library(viridis)
+```
 
-```{r, echo = FALSE, out.width="80%", fig.align='center'}
+
+```{r}
 knitr::include_graphics("https://github.com/reisanar/figs/raw/master/tpa_max_temps_ridges_plasma.png")
+p <- ggplot(data = Tampa_Weather,
+            mapping = aes(x = max_temp, y = factor(month, levels = rev(unique(month)),
+                                     ordered = TRUE)))
+p + geom_density_ridges(alpha = 0.6,scale = 1.5) +
+    stat_density_ridges(quantile_lines = TRUE, quantiles = 0.5)+
+    scale_y_discrete(expand = c(0.01, 0)) + 
+    labs(x = "Maximum Temperature", y = NULL,
+         title = "Temperature Distribution in different months")+ theme_bw()+scale_fill_viridis_d()+
+    theme(title = element_text(size = 16, face = "bold"))+scale_fill_viridis( name = "Quantile", option = "plasma")
+ 
 ```
+                   
 
-Hint: this uses the `plasma` option (color scale) for the _viridis_ palette.
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+mean_temp<- Tampa_Weather %>%
+    group_by(month) %>%
+    summarize(xbar = round(mean(max_temp, na.rm = TRUE), 0))
+```
+```{r}
+ggplot(Tampa_Weather, aes(max_temp, fill=month))+
+    geom_density(alpha=0.3)+
+    facet_grid(month~.)+
+    theme_bw(base_size=14)+scale_fill_viridis(
+                     , name = "maximum temperature"
+                     , option = "plasma")
+```
 
 
 
