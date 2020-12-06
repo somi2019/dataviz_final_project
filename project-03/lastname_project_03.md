@@ -28,7 +28,10 @@ Using the dataset obtained from FSU's, for a station at Tampa International Airp
 
 ## Part 2: Visualizing Text Data
 
-Second part of this practice is about Visualizing Text Data topic,choosing **Billboard Top 100 Lyrics**, some plots were created,one of them can be seen here:
+Second part of this practice is about Visualizing Text Data topic,choosing **Billboard Top 100 Lyrics**, some plots were created,
+![top-10-songs](https://user-images.githubusercontent.com/70166302/101291779-44678d00-37d9-11eb-9bd6-ba9ddc49d305.png)
+
+one of intersting plots can be seen here:
 
 ![](lastname_project_03_files/figure-html/unnamed-chunk-23-1.png)<!-- -->
 
