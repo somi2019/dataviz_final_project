@@ -35,11 +35,3 @@ one of intersting plots can be seen here:
 
 ![](lastname_project_03_files/figure-html/unnamed-chunk-23-1.png)<!-- -->
 
-# Conclusion
-In this project, after checking the basics features and performing some actions such as data cleansing and removing uninformative words,an exploratory analysis was begun to categorize song levels.
-
-Next,text visualizing was checked by unnesting lyrics into tokenized words so it was possible to look at lyric complexity. The results provide critical insights for the next steps of **sentiment analysis** and topic modeling.
-
-Finally,**TF-IDF analysis**  was used to represent the information behind a word in a document relating to some outcome of interest. Result may look interesting, but it could be only some part od the whole story.
-* use of **slice(seq_len(n))** to grab the first n words in each chart_level. 
-* use **bind_tf_idf()** to run the formulas and create new columns.
