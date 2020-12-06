@@ -94,7 +94,6 @@ library(viridis)
 
 
 ```{r}
-knitr::include_graphics("https://github.com/reisanar/figs/raw/master/tpa_max_temps_ridges_plasma.png")
 p <- ggplot(data = Tampa_Weather,
             mapping = aes(x = max_temp, y = factor(month, levels = rev(unique(month)),
                                      ordered = TRUE)))
@@ -109,9 +108,7 @@ p + geom_density_ridges(alpha = 0.6,scale = 1.5) +
                    
 
 
-## Including Plots
 
-You can also embed plots, for example:
 
 ```{r pressure, echo=FALSE}
 mean_temp<- Tampa_Weather %>%
