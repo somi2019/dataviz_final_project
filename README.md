@@ -176,15 +176,12 @@ Some countries only had **1** participant such as *Falkland Islands*,*Bulgaria* 
 
 
 ## Project 03
-
-In this project, I explored ... _[short description of your revised project goes here]_
-
-**Sample data visualization:** 
-
-_[include your favorite visualization from this project here]_
-<img src="https://github.com/reisanar/figs/raw/master/jackie_jessie_marion.png" width="80%" height="80%">
+In this exercise you will explore methods to visualize text data and practice how to recreate charts that show the distributions of a continuous variable. 
 
 
-### Moving Forward
+## Part 1: Density Plots
 
-_add here a short reflection on what you learned and what you plan to continue exploring in terms of data visualization, data storytelling, reproducible research, and/or related topics_
+Using the dataset obtained from FSU's, for a station at Tampa International Airport (TPA) from 2016 to 2017,some charts shown below were created:
+
+## Part 2: Visualizing Text Data
+for this section *BB_top100_2015* data set was selected and one of the charts could be seen here:
