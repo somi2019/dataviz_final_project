@@ -128,12 +128,20 @@ In this exercise you will explore methods to visualize text data and practice ho
 
 ## Part 1: Density Plots
 
-Using the dataset obtained from FSU's, for a station at Tampa International Airport (TPA) from 2016 to 2017,some charts shown below were created:
+Using the dataset obtained from FSU's, for a station at Tampa International Airport (TPA) from 2016 to 2017.
+
+![weather foreast](https://user-images.githubusercontent.com/70166302/101291625-32d1b580-37d8-11eb-87c9-7e4f9bb7cc4e.jpg)
+
+some charts shown below were created:
 
 ![05](https://user-images.githubusercontent.com/70166302/101292565-3f590c80-37de-11eb-9842-dfca1bf55505.png)
 
 ## Part 2: Visualizing Text Data
-for this section *BB_top100_2015* data set was selected and one of the charts could be seen here:
+for this section *BB_top100_2015* data set was selected.
+
+![top-10-songs](https://user-images.githubusercontent.com/70166302/101291779-44678d00-37d9-11eb-9bd6-ba9ddc49d305.png)
+
+one of the charts could be seen here:
 
 ![07](https://user-images.githubusercontent.com/70166302/101292567-4122d000-37de-11eb-8564-29cec3254c9d.png)
 
