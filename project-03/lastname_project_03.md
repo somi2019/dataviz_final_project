@@ -10,69 +10,14 @@ output:
 # Data Visualization Project 03
 
 
-# Data Visualization Project 03
-
-
-In this exercise you will explore methods to visualize text data and practice how to recreate charts that show the distributions of a continuous variable. 
+In this exercise some methods were explored to visualize text data and practice how to recreate charts that show the distributions of a continuous variable. 
 
 
 ## Part 1: Density Plots
 
-Using the dataset obtained from FSU's [Florida Climate Center](https://climatecenter.fsu.edu/climate-data-access-tools/downloadable-data), for a station at Tampa International Airport (TPA) from 2016 to 2017, attempt to recreate the charts shown below
+Using the dataset obtained from FSU's, for a station at Tampa International Airport (TPA) from 2016 to 2017, attempt to recreate the charts some charts.
 
 
-```r
-library(tidyverse)
-Tampa_Weather<-read_csv("https://github.com/reisanar/datasets/raw/master/tpa_weather_16_17.csv")
-sample_n(Tampa_Weather,4)
-```
-
-```
-## # A tibble: 4 x 6
-##    year month   day precipitation max_temp min_temp
-##   <dbl> <dbl> <dbl>         <dbl>    <dbl>    <dbl>
-## 1  2016    11    23          0          79       57
-## 2  2016     9    25          0.26       91       76
-## 3  2016     5    18          0          88       72
-## 4  2016     2    28          0          72       48
-```
-
-
-```r
-library(lubridate)
-```
-
-```
-## 
-## Attaching package: 'lubridate'
-```
-
-```
-## The following objects are masked from 'package:base':
-## 
-##     date, intersect, setdiff, union
-```
-
-```r
-tpa_clean <- Tampa_Weather %>% 
-  unite("doy", year, month, day, sep = "-") %>% 
-  mutate(doy = ymd(doy), 
-         max_temp = as.double(max_temp), 
-         min_temp = as.double(min_temp), 
-         precipitation = as.double(precipitation))
-```
-
-
-## Part 1: Density Plots
-
-```r
-Tampa_Weather %>%
-ggplot(aes(x=max_temp)) +
-geom_histogram(color = "darkorchid4",fill="green",binwidth = 3) +
-theme(axis.text.x = element_text(angle = 90, hjust = 1,vjust = 0.5, size = 12), 
- axis.text.y = element_text(size = 12),strip.text = element_text(size = 12),axis.title = element_text(size = 12)) +facet_wrap(~ month)+scale_fill_viridis_d()+
-labs(x = "Maximum Temperature",y = "Number of Days",title = "Density of Hottest Days in Tampa ")+theme(plot.title = element_text(size = 20, face = "bold",color="tomato"))
-```
 
 ![](lastname_project_03_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
 
