@@ -31,10 +31,10 @@ sample_n(Tampa_Weather,4)
 ## # A tibble: 4 x 6
 ##    year month   day precipitation max_temp min_temp
 ##   <dbl> <dbl> <dbl>         <dbl>    <dbl>    <dbl>
-## 1  2016    10    23          0          79       54
-## 2  2016     6    24          0          90       80
-## 3  2016     3    19          0.33       76       69
-## 4  2016     3    21          0          65       50
+## 1  2016    11    23          0          79       57
+## 2  2016     9    25          0.26       91       76
+## 3  2016     5    18          0          88       72
+## 4  2016     2    28          0          72       48
 ```
 
 
@@ -150,12 +150,6 @@ library(viridis)
 
 
 ```r
-knitr::include_graphics("https://github.com/reisanar/figs/raw/master/tpa_max_temps_ridges_plasma.png")
-```
-
-![](https://github.com/reisanar/figs/raw/master/tpa_max_temps_ridges_plasma.png)<!-- -->
-
-```r
 p <- ggplot(data = Tampa_Weather,
             mapping = aes(x = max_temp, y = factor(month, levels = rev(unique(month)),
                                      ordered = TRUE)))
@@ -177,13 +171,11 @@ p + geom_density_ridges(alpha = 0.6,scale = 1.5) +
 ## Picking joint bandwidth of 1.49
 ```
 
-![](lastname_project_03_files/figure-html/unnamed-chunk-8-2.png)<!-- -->
+![](lastname_project_03_files/figure-html/unnamed-chunk-8-1.png)<!-- -->
                    
 
 
-## Including Plots
 
-You can also embed plots, for example:
 
 
 ```
@@ -357,12 +349,14 @@ head(sample(stop_words$word, 30), 30)
 ```
 
 ```
-##  [1] "actually"   "unless"     "happens"    "am"         "except"    
-##  [6] "open"       "where"      "c"          "liked"      "new"       
-## [11] "nowhere"    "wells"      "think"      "while"      "man"       
-## [16] "appreciate" "couldn't"   "because"    "regarding"  "known"     
-## [21] "they're"    "faces"      "no"         "shall"      "being"     
-## [26] "both"       "mr"         "again"      "differ"     "if"
+##  [1] "areas"         "themselves"    "each"          "available"    
+##  [5] "several"       "any"           "know"          "others"       
+##  [9] "few"           "provides"      "like"          "like"         
+## [13] "thus"          "oldest"        "didn't"        "old"          
+## [17] "nor"           "been"          "contains"      "he"           
+## [21] "became"        "using"         "uucp"          "unfortunately"
+## [25] "downed"        "on"            "course"        "the"          
+## [29] "highest"       "just"
 ```
 
 
