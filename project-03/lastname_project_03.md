@@ -22,7 +22,7 @@ Using the dataset obtained from FSU's, for a station at Tampa International Airp
  Bellow you can find one of my favorite charts in this case:
  
 
-![](lastname_project_03_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
+![WEATHER](lastname_project_03_files/figure-html/unnamed-chunk-5-1.png)
 
 
 
@@ -33,5 +33,4 @@ Second part of this practice is about Visualizing Text Data topic,choosing **Bil
 
 one of intersting plots can be seen here:
 
-![](lastname_project_03_files/figure-html/unnamed-chunk-23-1.png)<!-- -->
-
+![BILLBOARD](lastname_project_03_files/figure-html/unnamed-chunk-23-1.png)
