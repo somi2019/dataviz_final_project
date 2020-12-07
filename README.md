@@ -16,10 +16,11 @@ The following is a sample of products created during the _"Data Visualization an
 
 ## **WorldCupMatches**
 
-For this mini project I worked on world cup matches dataset, which includes matches during **1930 to 2014** held in different cities between different teams I focouced on some of variables mainly like *Home team goals*, *away team goals*, *audience* and some other variable to be used was created for this report such as *total goals*. Here I put some main Visualization of my project in this file:
 
 ![11](https://user-images.githubusercontent.com/70166302/99699013-7b127900-2a5f-11eb-8ac9-471b6d6372aa.jpeg)
 
+
+For this mini project I worked on world cup matches dataset, which includes matches during **1930 to 2014** held in different cities between different teams I focouced on some of variables mainly like *Home team goals*, *away team goals*, *audience* and some other variable to be used was created for this report such as *total goals*. Here I put some main Visualization of my project in this file:
 
 * Total Goals Distrubution:
 
@@ -80,9 +81,10 @@ To continue focusing on one specific country, using *geom_point* it can be seen 
 
 ## **marathon result 2017**
 
-This *mini project* will review marathon result dataset in different countries in 2017,with some main variables such as gender,age,overal ranking,city,country which I worked on them mainly also some other variable to be used created for this report such as finishing time.
+![Marathon 2017 ](https://i2.wp.com/greenpointers.com/app/uploads/2018/11/nyc-marathon.jpg?w=705&ssl=1)
 
-![Marathon 2017 ](https://i2.wp.com/greenpointers.com/app/uploads/2018/11/nyc-marathon.jpg?w=705&ssl=1
+
+This *mini project* will review marathon result dataset in different countries in 2017,with some main variables such as gender,age,overal ranking,city,country which I worked on them mainly also some other variable to be used created for this report such as finishing time.
 
 
 ![01](https://user-images.githubusercontent.com/70166302/100644005-bf780180-3308-11eb-88ff-f99a7cde01c4.png)
