@@ -82,6 +82,9 @@ To continue focusing on one specific country, using *geom_point* it can be seen 
 
 This *mini project* will review marathon result dataset in different countries in 2017,with some main variables such as gender,age,overal ranking,city,country which I worked on them mainly also some other variable to be used created for this report such as finishing time.
 
+![Marathon 2017 ](https://i2.wp.com/greenpointers.com/app/uploads/2018/11/nyc-marathon.jpg?w=705&ssl=1
+
+
 ![01](https://user-images.githubusercontent.com/70166302/100644005-bf780180-3308-11eb-88ff-f99a7cde01c4.png)
 
 ![02](https://user-images.githubusercontent.com/70166302/100644274-1d0c4e00-3309-11eb-9964-91bf22a04bc7.png)
