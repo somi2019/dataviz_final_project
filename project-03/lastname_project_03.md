@@ -19,18 +19,12 @@ Using the dataset obtained from FSU's, for a station at Tampa International Airp
 
 ![weather foreast](https://user-images.githubusercontent.com/70166302/101291625-32d1b580-37d8-11eb-87c9-7e4f9bb7cc4e.jpg)
 
- Bellow you can find one of my favorite charts in this case:
  
-
-![WEATHER](lastname_project_03_files/figure-html/unnamed-chunk-5-1.png)
-
-
+ 
 
 ## Part 2: Visualizing Text Data
 
 Second part of this practice is about Visualizing Text Data topic,choosing **Billboard Top 100 Lyrics**, some plots were created,
 ![top-10-songs](https://user-images.githubusercontent.com/70166302/101291779-44678d00-37d9-11eb-9bd6-ba9ddc49d305.png)
 
-one of intersting plots can be seen here:
 
-![BILLBOARD](lastname_project_03_files/figure-html/unnamed-chunk-23-1.png)
