@@ -16,6 +16,31 @@ output:
 This data set was selected because when I was studying my bachelor I joind marathon group of my previous university and I had a memorable time those days. This dataset decoded some new aspects of this sport to me in other places of world.
 I started ploting some basic plot at first to have a general opinion about the whole topic,then shifted to some interactive plot and finally some spatial plot.
 
+![30](https://user-images.githubusercontent.com/70166302/101683436-f0f07b80-3a32-11eb-9990-f9ca70cfac53.png)
+
+![31](https://user-images.githubusercontent.com/70166302/101683438-f1891200-3a32-11eb-886c-365ef1ca87ae.png)
+
+![32](https://user-images.githubusercontent.com/70166302/101683440-f221a880-3a32-11eb-8477-ae93672fa88c.png)
+
+![33](https://user-images.githubusercontent.com/70166302/101683445-f2ba3f00-3a32-11eb-9a06-bd83bb0cde1e.png)
+
+![34](https://user-images.githubusercontent.com/70166302/101683446-f352d580-3a32-11eb-953c-ee42992a8d54.png)
+
+![35](https://user-images.githubusercontent.com/70166302/101683448-f352d580-3a32-11eb-990d-36253d298980.png)
+
+![36](https://user-images.githubusercontent.com/70166302/101683449-f3eb6c00-3a32-11eb-9352-b9e34c938444.png)
+
+![37](https://user-images.githubusercontent.com/70166302/101683452-f3eb6c00-3a32-11eb-8198-481bff3212d4.png)
+
+![38](https://user-images.githubusercontent.com/70166302/101683454-f3eb6c00-3a32-11eb-9c48-2fe1ce93bc69.png)
+
+![39](https://user-images.githubusercontent.com/70166302/101683456-f3eb6c00-3a32-11eb-93b0-a3735e0c811f.png)
+
+![40](https://user-images.githubusercontent.com/70166302/101683459-f4840280-3a32-11eb-90ee-ca9cc05a27fe.png)
+
+![41](https://user-images.githubusercontent.com/70166302/101683463-f4840280-3a32-11eb-945f-93e0128f536d.png)
+
+![42](https://user-images.githubusercontent.com/70166302/101683465-f51c9900-3a32-11eb-8d52-4849ae31afee.png)
 
 
 
