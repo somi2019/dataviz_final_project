@@ -16,6 +16,7 @@ output:
 This data set was selected because when I was studying my bachelor I joind marathon group of my previous university and I had a memorable time those days. This dataset decoded some new aspects of this sport to me in other places of world.
 I started ploting some basic plot at first to have a general opinion about the whole topic,then shifted to some interactive plot and finally some spatial plot.
 
+
 ![30](https://user-images.githubusercontent.com/70166302/101683436-f0f07b80-3a32-11eb-9990-f9ca70cfac53.png)
 
 ![31](https://user-images.githubusercontent.com/70166302/101683438-f1891200-3a32-11eb-886c-365ef1ca87ae.png)
