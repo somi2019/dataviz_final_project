@@ -6,7 +6,7 @@
 
 
 
-The following is a sample of products created during the _"Data Visualization and Reproducible Research"_ course in Fall 2020.
+The following is a sample of products created during the _"Data Visualization and Reproducible Research"_ course in Fall 2020.It includes 3 project,in the first mini project some analysis was done on the **World Cup Matches** data series.The second one was an analysis of **Marathon Result 2017** and finally two short analysis on **Tampa Weather** from *2016 to 2017* and *BB_top100_2015*.In these 3 projects it was required to help from a variety of functions and skills which was taught during this course.Following a brief summary of all these project could be seen:
 
 
 ## Project 01
@@ -27,21 +27,6 @@ For this mini project I worked on world cup matches dataset, which includes matc
 Distribution of *Total Goals* using the *hist()* function. We can see in the graphs that the data is skewed to the right.
 
 ![2](https://user-images.githubusercontent.com/70166302/99691907-b610ae80-2a57-11eb-9108-f726feacd8dd.png)
-
-
-
-*	Attendance in Home Town:
-
-Attendance in cities like *London* and *Mexico City* and *Los Angeles* were more than other cities for, to be more specific I filtered number of  audiences  between *70,000 to 150,000* and used the function of *facet_wrap* to separate cities.
-
-![12](https://user-images.githubusercontent.com/70166302/99699679-376c3f00-2a60-11eb-8a6e-c802c31fc6fd.png)
-
-
-*	Attendance of Winning Teams with the Location of Game: 
-
-This plot shows relationship of attendance vs winning teams and the location of matches, colored disceretly,also in *Netherland* match there were fewest attendance to watch the game.
-
-![6](https://user-images.githubusercontent.com/70166302/99691929-bc068f80-2a57-11eb-947b-2b53e66ace3a.png)
 
 
 *	Attendance vs. Date: Plot shows relation of attendance versus the year the match was held, it is also colored by winning team, using the *scale_colour_iwanthue()* function and *palette of hues* which has lots of colors for qualitative variable. *Italy* in *1970* has the most audiences more than *100,000* people.
