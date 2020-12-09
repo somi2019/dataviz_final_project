@@ -77,6 +77,9 @@ theme(axis.text.x = element_text(angle = 90, hjust = 1,vjust = 0.5, size = 12),
 labs(x = "Maximum Temperature",y = "Number of Days",title = "Density plot for each month in 2016 ")+theme(plot.title = element_text(size = 20, face = "bold",color="black"))
 
 ```
+```{r}
+library(ggridges)
+```
 
 
 (d) Recreate the chart below:
@@ -88,7 +91,7 @@ ordered_months <- c("January","February","March","April","May","June","July","Au
 Tampa_Weather$months<-ordered_months[Tampa_Weather$month]
 Tampa_Weather$months<-factor(Tampa_Weather$months,levels = c("January","February","March","April","May","June","July","August","september","October","Novomber","December"))
 Tampa_Weather<-Tampa_Weather[order(Tampa_Weather$months),]
-ggplot(data=Tampa_Weather,mapping=aes(x=max_temp,y=months, fill=months))+stat_density_ridges(quantile_lines = TRUE, quantiles = 0.5,show.legend = FALSE)+labs(x = "Maximum Temperature", y = NULL,
+ggplot(data=Tampa_Weather,mapping=aes(x=max_temp,y=months, fill=months))+ stat_density_ridges(quantile_lines = TRUE, quantiles = 0.5,show.legend = FALSE)+labs(x = "Maximum Temperature", y = NULL,
  title = "Temperature Distribution in different months")+ theme_bw()+
 theme(title = element_text(size = 16, face = "bold"))+scale_fill_manual(values=c("#450D54","#482173","#433E85","#4C6996","#2D708E","#25858E","1e9B8A","#2CB07F","#51C56A","#85D54A","#C2DF23","#FDE725"))
 
