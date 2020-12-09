@@ -81,8 +81,11 @@ Using the dataset obtained from FSU's, for a station at Tampa International Airp
 ![2](https://user-images.githubusercontent.com/70166302/101691023-11710380-3a3c-11eb-9c5e-79f1c585c50c.png)
 
 
+
 ## Part 2: Visualizing Text Data
+
 for this section *BB_top100_2015* data set was selected.
+
 
 ![top-10-songs](https://user-images.githubusercontent.com/70166302/101291779-44678d00-37d9-11eb-9bd6-ba9ddc49d305.png)
 
