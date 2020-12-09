@@ -48,10 +48,6 @@ This *mini project* will review marathon result dataset in different countries i
 
 
 
-
-![08](https://user-images.githubusercontent.com/70166302/100650732-5eedc200-3312-11eb-8e04-3234457ad9e4.png)
-Above plot shows countries which have youngest runnersunder *25* years old,as it is obvious USA with *1666* young runners has the most youngest runners among other countries. with a huge difference canada is the second country with *43* young runners under 25 years old.
-
 ![09](https://user-images.githubusercontent.com/70166302/100650966-c0159580-3312-11eb-8fc2-ca4f1f138f7c.png)
 In above map 3 first most popluted runneres countries are shown:*USA,Canada,United Kingdom*.
 
