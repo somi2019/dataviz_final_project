@@ -68,11 +68,11 @@ labs(x = "Maximum Temperature",y = "Number of Days",title = "Density of Hottest 
 
 ```{r  }
 p<-ggplot(Tampa_Weather,aes(x=max_temp)) +
-geom_density(binwidth = 3,fill="green") +
+geom_density(binwidth = 3) +
 theme(axis.text.x = element_text(angle = 90, hjust = 1,vjust = 0.5, size = 12), 
  axis.text.y = element_text(size = 12),strip.text = element_text(size = 12),axis.title = element_text(size = 12)) +facet_wrap(~ month,labeller =as_labeller(month.names))+
 labs(x = "Maximum Temperature",y = "Number of Days",title = "Density plot for each month in 2016 ")+theme(plot.title = element_text(size = 20, face = "bold",color="black"))+scale_fill_viridis_c()
-p+ scale_fill_viridis_d()
+p+ scale_fill_manual(values=c("#450D54","#482173","#433E85","#4C6996","#2D708E","#25858E","1e9B8A","#2CB07F","#51C56A","#85D54A","#C2DF23","#FDE725"))
 ```
 
 
