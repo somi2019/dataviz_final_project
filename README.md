@@ -140,7 +140,14 @@ Using the dataset obtained from FSU's, for a station at Tampa International Airp
 
 some charts shown below were created:
 
-![05](https://user-images.githubusercontent.com/70166302/101292565-3f590c80-37de-11eb-9842-dfca1bf55505.png)
+![000006](https://user-images.githubusercontent.com/70166302/101674299-52f6b400-3a26-11eb-94f0-0b7cfcdbff49.png)
+
+![000003](https://user-images.githubusercontent.com/70166302/101674239-41151100-3a26-11eb-9c25-166b1ee368c4.png)
+
+![000004](https://user-images.githubusercontent.com/70166302/101674285-4d996980-3a26-11eb-8c81-acb40886daff.png)
+
+![000005](https://user-images.githubusercontent.com/70166302/101674291-4ffbc380-3a26-11eb-833b-a39a4bd019aa.png)
+
 
 ## Part 2: Visualizing Text Data
 for this section *BB_top100_2015* data set was selected.
