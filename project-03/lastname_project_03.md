@@ -28,10 +28,10 @@ sample_n(Tampa_Weather,4)
 ## # A tibble: 4 x 6
 ##    year month   day precipitation max_temp min_temp
 ##   <dbl> <dbl> <dbl>         <dbl>    <dbl>    <dbl>
-## 1  2016     8    26          0.39       95       77
-## 2  2016     4    15          0.06       80       69
-## 3  2016     5    29          0          88       75
-## 4  2016     6    30          0.17       90       77
+## 1  2016     9     3          0.52       86       75
+## 2  2016     8    29          1.27       91       75
+## 3  2016     9    20          0.02       91       78
+## 4  2016    12     4          0          84       64
 ```
 
 
@@ -63,9 +63,8 @@ tpa_clean <- Tampa_Weather %>%
 month.names <-c('1'="January",'2'="February",'3'="March",'4'="April",'5'="May",'6'="June",'7'="July",'8'="August",'9'="September",'10'="October",'11'="Novomber",'12'="December")
 ```
 
-## Part 1: Density Plots
-(a) Recreate the plot below:
 
+(a) 
 
 ```r
 Tampa_Weather %>%
@@ -74,29 +73,29 @@ geom_histogram(color="white",binwidth = 3) +
 theme(axis.text.x = element_text(angle = 90, hjust = 1,vjust = 0.5, size = 12), 
 axis.text.y = element_text(size = 12),strip.text = element_text(size = 12),axis.title = element_text(size = 12))+ facet_wrap(~ month,labeller =as_labeller(month.names) )+theme(legend.position="none")+
 labs(x = "Maximum Temperature",y = "Number of Days",title = "Density of Hottest Days in Tampa ")+
-theme(plot.title = element_text(size = 20, face = "bold",color="tomato"))+scale_fill_manual(values=c("#450D54","#450D54","#433E85","#433E85","#2D708E","#2D708E","#1E9B8A","#1E9B8A","#1E9B8A","#C2DF23","#C2DF23","#FDE725"))
+theme(plot.title = element_text(size = 20, face = "bold",color="black"))+scale_fill_manual(values=c("#450D54","#450D54","#433E85","#433E85","#2D708E","#2D708E","#1E9B8A","#1E9B8A","#1E9B8A","#C2DF23","#C2DF23","#FDE725"))
 ```
 
 ![](lastname_project_03_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
+* According to the plot in months of **June** and **July** Tampa had most frequency of hot days.
 
-(b) Recreate the plot below:
 
+(b) 
 
 ```r
 ggplot(data =Tampa_Weather,mapping = aes(x = max_temp)) +
 geom_density(bw=0.5,fill="#808080", color="black",kernel="epanechnikov")+ 
 theme(axis.text.x = element_text(angle = 90, hjust = 1,vjust = 0.5, size = 10), 
  axis.text.y = element_text(size = 12),strip.text = element_text(size = 12),axis.title = element_text(size = 12))+ 
-labs(x = "Maximum Temperature",y = "Number of Days",title = "Density of Hottest Days in Tampa ")+theme(plot.title = element_text(size = 20, face = "bold",color="tomato"))+theme_minimal()
+labs(x = "Maximum Temperature",y = "Number of Days",title = "Density of Hottest Days in Tampa ")+ theme(plot.title = element_text(size = 20, face = "bold",color="tomato"))+theme_minimal()
 ```
 
 ![](lastname_project_03_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
-
-
-(c) Recreate the chart below:
+* In hottest days maximum of temperature achived to **90** degree of Fahrenheit. 
 
 
 
+(c) 
 
 ```r
 ggplot(Tampa_Weather,aes(x=max_temp)) +
@@ -111,14 +110,16 @@ labs(x = "Maximum Temperature",y = "Number of Days",title = "Density plot for ea
 ```
 
 ![](lastname_project_03_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
+* According to this plot it could be find in every month how many days had maximun of temperature.
+
+
 
 ```r
 library(ggridges)
 ```
 
 
-(d) Recreate the chart below:
-
+(d) 
 
 ```r
 Tampa_Weather$month<-factor(Tampa_Weather$month,levels = c("1","2","3","4","5","6","7","8","9","10","11","12"))
@@ -137,13 +138,14 @@ theme(title = element_text(size = 16, face = "bold"))+scale_fill_manual(values=c
 ```
 
 ![](lastname_project_03_files/figure-html/unnamed-chunk-8-1.png)<!-- -->
+* This plot shows in months of **January**,**February** and **December** temperature in Tampa had a wide distribution.
 
-
+(e) 
 
 ```r
 ggplot(data=Tampa_Weather,mapping=aes(x=max_temp,y=months, fill=months))+geom_density_ridges(show.legend = FALSE)+ stat_density_ridges(quantile_lines=TRUE,quantiles=0.5,show.legend = FALSE)+labs(x = "Maximum Temperature", y = NULL,
  title = "Temperature Distribution in different months")+ theme_minimal()+
-theme(title = element_text(size = 16, face = "bold"))+scale_fill_manual(values=c("#450D54","#482173","#433E85","#4C6996","#2D708E","#25858E","1e9B8A","#2CB07F","#51C56A","#85D54A","#C2DF23","#FDE725"))
+theme(title = element_text(size = 16, face = "bold"))+scale_fill_manual(values=c("#450D54","#482173","#433E85","#4C6996","#2D708E","#25858E","1e9B8A","#1e9B8A","#1e9B8A","#85D54A","#C2DF23","#FDE725"))
 ```
 
 ```
@@ -152,6 +154,8 @@ theme(title = element_text(size = 16, face = "bold"))+scale_fill_manual(values=c
 ```
 
 ![](lastname_project_03_files/figure-html/unnamed-chunk-9-1.png)<!-- -->
+* The graph shows in *** The graph shows in **August** and **July** the temperature was maximum.
+
 
 
 ```r
@@ -162,8 +166,7 @@ library(viridis)
 ## Loading required package: viridisLite
 ```
 
-(f) Recreate the plot below:
-
+(f)
 
 ```r
 ggplot(Tampa_Weather,aes(x=max_temp,y=months,fill=stat(x)))+geom_density_ridges_gradient(scale=1.75,size=0.6,quantile_lines=TRUE,quantiles=0.5)+scale_fill_viridis(
@@ -176,6 +179,10 @@ ggplot(Tampa_Weather,aes(x=max_temp,y=months,fill=stat(x)))+geom_density_ridges_
 ```
 
 ![](lastname_project_03_files/figure-html/unnamed-chunk-11-1.png)<!-- -->
+* The graph shows in **August** and **July** the temperature was maximum.
+
+
+
 
 
 ## Part 2: Visualizing Text Data
@@ -331,12 +338,12 @@ head(sample(stop_words$word, 30), 30)
 ```
 
 ```
-##  [1] "uses"        "you'd"       "for"         "him"         "yourself"   
-##  [6] "good"        "qv"          "you'll"      "through"     "latter"     
-## [11] "contains"    "number"      "turned"      "showed"      "considering"
-## [16] "happens"     "whereby"     "different"   "nor"         "during"     
-## [21] "quite"       "do"          "her"         "or"          "now"        
-## [26] "opening"     "this"        "fully"       "except"      "one"
+##  [1] "haven't"     "grouped"     "smallest"    "name"        "h"          
+##  [6] "be"          "without"     "ever"        "per"         "more"       
+## [11] "parted"      "only"        "put"         "being"       "sensible"   
+## [16] "on"          "were"        "taken"       "onto"        "furthermore"
+## [21] "cannot"      "ask"         "four"        "seem"        "done"       
+## [26] "present"     "willing"     "by"          "what's"      "goods"
 ```
 
 
@@ -474,7 +481,7 @@ top_popular_tfidf_words %>%
 
 ![](lastname_project_03_files/figure-html/unnamed-chunk-28-1.png)<!-- -->
 
-Conclusion
+# Conclusion
 In this project, after checking the basics features and performing some actions such as data cleansing and removing uninformative words,an exploratory analysis was begun to categorize song levels.
 
 Next,text visualizing was checked by unnesting lyrics into tokenized words so it was possible to look at lyric complexity. The results provide critical insights for the next steps of **sentiment analysis** and topic modeling.

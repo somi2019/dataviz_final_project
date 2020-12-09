@@ -76,6 +76,7 @@ theme(axis.text.x = element_text(angle = 90, hjust = 1,vjust = 0.5, size = 12),
 labs(x = "Maximum Temperature",y = "Number of Days",title = "Density plot for each month in 2016 ")+theme(plot.title = element_text(size = 20, face = "bold",color="black"))
 
 ```
+
 * According to this plot it could be find in every month how many days had maximun of temperature.
 
 
@@ -97,6 +98,7 @@ ggplot(data=Tampa_Weather,mapping=aes(x=max_temp,y=months, fill=months))+ stat_d
 theme(title = element_text(size = 16, face = "bold"))+scale_fill_manual(values=c("#450D54","#482173","#433E85","#4C6996","#2D708E","#25858E","1e9B8A","#2CB07F","#51C56A","#85D54A","#C2DF23","#FDE725"))
 
 ```
+
 * This plot shows in months of **January**,**February** and **December** temperature in Tampa had a wide distribution.
 
 (e) 
@@ -105,7 +107,8 @@ ggplot(data=Tampa_Weather,mapping=aes(x=max_temp,y=months, fill=months))+geom_de
  title = "Temperature Distribution in different months")+ theme_minimal()+
 theme(title = element_text(size = 16, face = "bold"))+scale_fill_manual(values=c("#450D54","#482173","#433E85","#4C6996","#2D708E","#25858E","1e9B8A","#1e9B8A","#1e9B8A","#85D54A","#C2DF23","#FDE725"))
 ```
-* The graph shows in *** The graph shows in **August** and **July** the temperature was maximum.
+
+* The graph shows in **August** and **July** the temperature was maximum.
 
 
 ```{r}
@@ -118,6 +121,7 @@ ggplot(Tampa_Weather,aes(x=max_temp,y=months,fill=stat(x)))+geom_density_ridges_
                      , name = "Maximum Temperature"
                      , option = "plasma")+labs(x="Maximum Temperature in Farenheit Degree",y="Month")+theme_minimal()
 ```
+
 * The graph shows in **August** and **July** the temperature was maximum.
 
 
