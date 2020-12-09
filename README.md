@@ -36,11 +36,6 @@ Attendance in cities like *London* and *Mexico City* and *Los Angeles* were more
 
 ![12](https://user-images.githubusercontent.com/70166302/99699679-376c3f00-2a60-11eb-8a6e-c802c31fc6fd.png)
 
-*	Attendance VS. Home Team Games (More than *50000* attendance):
-
-Another format for checking games with high number of audiences for hometown games filled with total goals, *Brazil and Mexico* had most audiences in home town matches.
-
-![5](https://user-images.githubusercontent.com/70166302/99691923-bad56280-2a57-11eb-99db-4b0a2359a4d3.png)
 
 *	Attendance of Winning Teams with the Location of Game: 
 
