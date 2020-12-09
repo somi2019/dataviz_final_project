@@ -28,10 +28,10 @@ sample_n(Tampa_Weather,4)
 ## # A tibble: 4 x 6
 ##    year month   day precipitation max_temp min_temp
 ##   <dbl> <dbl> <dbl>         <dbl>    <dbl>    <dbl>
-## 1  2016     9     3          0.52       86       75
-## 2  2016     8    29          1.27       91       75
-## 3  2016     9    20          0.02       91       78
-## 4  2016    12     4          0          84       64
+## 1  2016     7    19             0       93       77
+## 2  2016     5    28             0       89       73
+## 3  2016     9     7             0       92       76
+## 4  2016    10     5             0       92       75
 ```
 
 
@@ -110,6 +110,7 @@ labs(x = "Maximum Temperature",y = "Number of Days",title = "Density plot for ea
 ```
 
 ![](lastname_project_03_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
+
 * According to this plot it could be find in every month how many days had maximun of temperature.
 
 
@@ -138,6 +139,7 @@ theme(title = element_text(size = 16, face = "bold"))+scale_fill_manual(values=c
 ```
 
 ![](lastname_project_03_files/figure-html/unnamed-chunk-8-1.png)<!-- -->
+
 * This plot shows in months of **January**,**February** and **December** temperature in Tampa had a wide distribution.
 
 (e) 
@@ -154,7 +156,8 @@ theme(title = element_text(size = 16, face = "bold"))+scale_fill_manual(values=c
 ```
 
 ![](lastname_project_03_files/figure-html/unnamed-chunk-9-1.png)<!-- -->
-* The graph shows in *** The graph shows in **August** and **July** the temperature was maximum.
+
+* The graph shows in **August** and **July** the temperature was maximum.
 
 
 
@@ -179,6 +182,7 @@ ggplot(Tampa_Weather,aes(x=max_temp,y=months,fill=stat(x)))+geom_density_ridges_
 ```
 
 ![](lastname_project_03_files/figure-html/unnamed-chunk-11-1.png)<!-- -->
+
 * The graph shows in **August** and **July** the temperature was maximum.
 
 
@@ -338,12 +342,12 @@ head(sample(stop_words$word, 30), 30)
 ```
 
 ```
-##  [1] "haven't"     "grouped"     "smallest"    "name"        "h"          
-##  [6] "be"          "without"     "ever"        "per"         "more"       
-## [11] "parted"      "only"        "put"         "being"       "sensible"   
-## [16] "on"          "were"        "taken"       "onto"        "furthermore"
-## [21] "cannot"      "ask"         "four"        "seem"        "done"       
-## [26] "present"     "willing"     "by"          "what's"      "goods"
+##  [1] "at"         "now"        "while"      "could"      "these"     
+##  [6] "keeps"      "her"        "hers"       "shan't"     "from"      
+## [11] "don't"      "being"      "whether"    "doesn't"    "right"     
+## [16] "thought"    "under"      "what"       "hereby"     "beforehand"
+## [21] "certainly"  "way"        "was"        "wanting"    "early"     
+## [26] "see"        "anything"   "are"        "alone"      "behind"
 ```
 
 
