@@ -154,9 +154,11 @@ for this section *BB_top100_2015* data set was selected.
 
 ![top-10-songs](https://user-images.githubusercontent.com/70166302/101291779-44678d00-37d9-11eb-9bd6-ba9ddc49d305.png)
 
-one of the charts could be seen here:
+Some charts could be seen here:
 
 ![07](https://user-images.githubusercontent.com/70166302/101292567-4122d000-37de-11eb-8564-29cec3254c9d.png)
+
+![3](https://user-images.githubusercontent.com/70166302/101674774-eb8d3400-3a26-11eb-875a-9a990e29eb0d.png)
 
 
 
