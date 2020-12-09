@@ -32,96 +32,83 @@ tpa_clean <- Tampa_Weather %>%
          min_temp = as.double(min_temp), 
          precipitation = as.double(precipitation))
 ```
-
+```{r}
+month.names <-c('1'="January",'2'="February",'3'="March",'4'="April",'5'="May",'6'="June",'7'="July",'8'="August",'9'="September",'10'="October",'11'="Novomber",'12'="December")
+```
 
 ## Part 1: Density Plots
+(a) Recreate the plot below:
+
 ```{r}
 Tampa_Weather %>%
-ggplot(aes(x=max_temp)) +
-geom_histogram(color = "darkorchid4",fill="green",binwidth = 3) +
+ggplot(Tampa_Weather,mapping=aes(x=max_temp,fill=as.factor(month))) +
+geom_histogram(color="white",binwidth = 3) +
 theme(axis.text.x = element_text(angle = 90, hjust = 1,vjust = 0.5, size = 12), 
- axis.text.y = element_text(size = 12),strip.text = element_text(size = 12),axis.title = element_text(size = 12)) +facet_wrap(~ month)+scale_fill_viridis_d()+
-labs(x = "Maximum Temperature",y = "Number of Days",title = "Density of Hottest Days in Tampa ")+theme(plot.title = element_text(size = 20, face = "bold",color="tomato"))
+axis.text.y = element_text(size = 12),strip.text = element_text(size = 12),axis.title = element_text(size = 12))+ facet_wrap(~ month,labeller =as_labeller(month.names) )+theme(legend.position="none")+
+labs(x = "Maximum Temperature",y = "Number of Days",title = "Density of Hottest Days in Tampa ")+
+theme(plot.title = element_text(size = 20, face = "bold",color="tomato"))+scale_fill_manual(values=c("#450D54","#450D54","#433E85","#433E85","#2D708E","#2D708E","#1E9B8A","#1E9B8A","#1E9B8A","#C2DF23","#C2DF23","#FDE725"))
+
 
 ```
+
+(b) Recreate the plot below:
 
 ```{r}
 
 ggplot(data =Tampa_Weather,mapping = aes(x = max_temp)) +
-geom_density(bw=0.5,fill="#808080", color="black")+ 
+geom_density(bw=0.5,fill="#808080", color="black",kernel="epanechnikov")+ 
 theme(axis.text.x = element_text(angle = 90, hjust = 1,vjust = 0.5, size = 10), 
  axis.text.y = element_text(size = 12),strip.text = element_text(size = 12),axis.title = element_text(size = 12))+ 
-labs(x = "Maximum Temperature",y = "Number of Days",title = "Density of hottest days in Tampa ")+theme(plot.title = element_text(size = 20, face = "bold",color="tomato"))+theme_bw()
+labs(x = "Maximum Temperature",y = "Number of Days",title = "Density of Hottest Days in Tampa ")+theme(plot.title = element_text(size = 20, face = "bold",color="tomato"))+theme_minimal()
 
 ```
 
 
-
+(c) Recreate the chart below:
 
 ```{r  }
 p<-ggplot(Tampa_Weather,aes(x=max_temp)) +
 geom_density(binwidth = 3,fill="green") +
 theme(axis.text.x = element_text(angle = 90, hjust = 1,vjust = 0.5, size = 12), 
- axis.text.y = element_text(size = 12),strip.text = element_text(size = 12),axis.title = element_text(size = 12)) +facet_wrap(~ month)+
+ axis.text.y = element_text(size = 12),strip.text = element_text(size = 12),axis.title = element_text(size = 12)) +facet_wrap(~ month,labeller =as_labeller(month.names))+
 labs(x = "Maximum Temperature",y = "Number of Days",title = "Density plot for each month in 2016 ")+theme(plot.title = element_text(size = 20, face = "bold",color="black"))+scale_fill_viridis_c()
 p+ scale_fill_viridis_d()
 ```
 
+
+(d) Recreate the chart below:
+
 ```{r}
-library(ggridges)
-
-p <- ggplot(data = Tampa_Weather,
-            mapping = aes(x = max_temp, y = factor(month, levels = rev(unique(month)),
-                                     ordered = TRUE)))
-p + geom_density_ridges(alpha = 0.6, fill = "yellow", scale = 1.5) +
-    stat_density_ridges(quantile_lines = TRUE, quantiles = 0.5,fill = "yellow", colour = "black")+
-    scale_y_discrete(expand = c(0.01, 0)) + 
-    labs(x = "Maximum Temperature", y = NULL,
-         title = "Temperature Distribution in different months") +
-    theme_ridges() +scale_fill_viridis_d()+
-    theme(title = element_text(size = 16, face = "bold"))
-
+Tampa_Weather$month<-factor(Tampa_Weather$month,levels = c("1","2","3","4","5","6","7","8","9","10","11","12"))
+Tampa_Weather<-Tampa_Weather[order(Tampa_Weather$month),]
+ordered_months <- c("January","February","March","April","May","June","July","August","september","October","Novomber","December")
+Tampa_Weather$months<-ordered_months[Tampa_Weather$month]
+Tampa_Weather$months<-factor(Tampa_Weather$months,levels = c("January","February","March","April","May","June","July","August","september","October","Novomber","December"))
+Tampa_Weather<-Tampa_Weather[order(Tampa_Weather$months),]
+ggplot(data=Tampa_Weather,mapping=aes(x=max_temp,y=months, fill=months))+stat_density_ridges(quantile_lines = TRUE, quantiles = 0.5,show.legend = FALSE)+labs(x = "Maximum Temperature", y = NULL,
+ title = "Temperature Distribution in different months")+ theme_bw()+
+theme(title = element_text(size = 16, face = "bold"))+scale_fill_manual(values=c("#450D54","#482173","#433E85","#4C6996","#2D708E","#25858E","1e9B8A","#2CB07F","#51C56A","#85D54A","#C2DF23","#FDE725"))
 
 ```
 
+
+```{r}
+ggplot(data=Tampa_Weather,mapping=aes(x=max_temp,y=months, fill=months))+geom_density_ridges(show.legend = FALSE)+ stat_density_ridges(quantile_lines=TRUE,quantiles=0.5,show.legend = FALSE)+labs(x = "Maximum Temperature", y = NULL,
+ title = "Temperature Distribution in different months")+ theme_minimal()+
+theme(title = element_text(size = 16, face = "bold"))+scale_fill_manual(values=c("#450D54","#482173","#433E85","#4C6996","#2D708E","#25858E","1e9B8A","#2CB07F","#51C56A","#85D54A","#C2DF23","#FDE725"))
+```
 
 ```{r}
 library(viridis)
 ```
 
+(f) Recreate the plot below:
 
 ```{r}
-p <- ggplot(data = Tampa_Weather,
-            mapping = aes(x = max_temp, y = factor(month, levels = rev(unique(month)),
-                                     ordered = TRUE)))
-p + geom_density_ridges(alpha = 0.6,scale = 1.5) +
-    stat_density_ridges(quantile_lines = TRUE, quantiles = 0.5)+
-    scale_y_discrete(expand = c(0.01, 0)) + 
-    labs(x = "Maximum Temperature", y = NULL,
-         title = "Temperature Distribution in different months")+ theme_bw()+scale_fill_viridis_d()+
-    theme(title = element_text(size = 16, face = "bold"))+scale_fill_viridis( name = "Quantile", option = "plasma")
- 
+ggplot(Tampa_Weather,aes(x=max_temp,y=months,fill=stat(x)))+geom_density_ridges_gradient(scale=1.75,size=0.6,quantile_lines=TRUE,quantiles=0.5)+scale_fill_viridis(
+                     , name = "Maximum Temperature"
+                     , option = "plasma")+labs(x="Maximum Temperature in Farenheit Degree",y="Month")+theme_minimal()
 ```
-                   
-
-
-
-
-```{r pressure, echo=FALSE}
-mean_temp<- Tampa_Weather %>%
-    group_by(month) %>%
-    summarize(xbar = round(mean(max_temp, na.rm = TRUE), 0))
-```
-```{r}
-ggplot(Tampa_Weather, aes(max_temp, fill=month))+
-    geom_density(alpha=0.3)+
-    facet_grid(month~.)+
-    theme_bw(base_size=14)+scale_fill_viridis(
-                     , name = "maximum temperature"
-                     , option = "plasma")
-```
-
-
 
 
 ## Part 2: Visualizing Text Data
