@@ -96,6 +96,7 @@ for this section *BB_top100_2015* data set was selected.
 
 ![07](https://user-images.githubusercontent.com/70166302/101292567-4122d000-37de-11eb-8564-29cec3254c9d.png)
 
+![12](https://user-images.githubusercontent.com/70166302/101702810-9fa2b500-3a4f-11eb-9c12-a961bfa4d065.png)
 
 
 
