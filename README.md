@@ -28,11 +28,11 @@ For this mini project I worked on world cup matches dataset, which includes matc
 
 ## Findings:
 
-•	For audiences between 70,000 to 150,000 Number of attendance in cities like **London** and **Mexico City** and **Los Angeles** were the most in home town matches.
+*	For audiences between 70,000 to 150,000 Number of attendance in cities like **London** and **Mexico City** and **Los Angeles** were the most in home town matches.
 
-•	For More than **50,000** attendance Teams of **Brazil** and **Mexico** had most audiences in home town matches.
+*	For More than **50,000** attendance Teams of **Brazil** and **Mexico** had most audiences in home town matches.
 
-•	For audiences more than **90,000** for games with 2 goals there were the most attendances in **Rio De Janiro**.Also in **Netherland** match there were fewest attendance to watch the game.
+*	For audiences more than **90,000** for games with 2 goals there were the most attendances in **Rio De Janiro**.Also in **Netherland** match there were fewest attendance to watch the game.
 
 
 
@@ -53,16 +53,16 @@ In above map 3 first most popluted runneres countries are shown:*USA,Canada,Unit
 
 
 ## Findings:
- 
- The *youngest female* finishers were **18** years old, and *oldest female* ones were **84** years old.
 
-* *youngest male* finishers were 18 years old and *oldest male* runners were **83** years old.
+* The *youngest female* finishers were **18** years old, and *oldest female* ones were **84** years old.
+
+* *youngest male* finishers were **18** years old and *oldest male* runners were **83** years old.
 
 * Women are more eager to marathon when they are younger,specially when they are **25** and again when they are around **40**,but as they becoe older,they lose eagerness to run.
 
 * Men become interested to marathon slow by slow when they become older,specifically when they become **40,45,50** they love to join marathon races.after turning to **50** always more number of men are interested to run compare to women.
 
-* *Female runnersare younger than male runners* in first quartile, median and third quartile.Median for women is at their **40** but for men is at their **45**.
+* *Female* runnersare younger than *male* runners in first quartile, median and third quartile.Median for women is at their **40** but for men is at their **45**.
 
 
 ## Project 03
