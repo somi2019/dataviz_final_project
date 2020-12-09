@@ -114,7 +114,6 @@ In above map 3 first most popluted runneres countries are shown:*USA,Canada,Unit
 
 ![10](https://user-images.githubusercontent.com/70166302/100651562-9f9a0b00-3313-11eb-875f-c3b22876aab1.png)
 
-![11](https://user-images.githubusercontent.com/70166302/100651750-ee47a500-3313-11eb-9c15-c6c4e856ba69.png)
 
 ## Findings:
  The *youngest female* finishers were **18** years old, and *oldest female* ones were **84** years old.
