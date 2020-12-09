@@ -51,6 +51,10 @@ This *mini project* will review marathon result dataset in different countries i
 ![09](https://user-images.githubusercontent.com/70166302/100650966-c0159580-3312-11eb-8fc2-ca4f1f138f7c.png)
 In above map 3 first most popluted runneres countries are shown:*USA,Canada,United Kingdom*.
 
+![40](https://user-images.githubusercontent.com/70166302/101701930-e1326080-3a4d-11eb-8236-d4a74e7511bb.png)
+
+![36](https://user-images.githubusercontent.com/70166302/101701956-eb545f00-3a4d-11eb-8ea5-1d3210792ce3.png)
+
 
 ## Findings:
 
