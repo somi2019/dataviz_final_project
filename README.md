@@ -82,7 +82,7 @@ Using the dataset obtained from FSU's, for a station at Tampa International Airp
 
 ![000004](https://user-images.githubusercontent.com/70166302/101674285-4d996980-3a26-11eb-8c81-acb40886daff.png)
 
-![000005](https://user-images.githubusercontent.com/70166302/101674291-4ffbc380-3a26-11eb-833b-a39a4bd019aa.png)
+![2](https://user-images.githubusercontent.com/70166302/101691023-11710380-3a3c-11eb-9c5e-79f1c585c50c.png)
 
 
 ## Part 2: Visualizing Text Data
