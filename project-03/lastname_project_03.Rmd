@@ -36,9 +36,8 @@ tpa_clean <- Tampa_Weather %>%
 month.names <-c('1'="January",'2'="February",'3'="March",'4'="April",'5'="May",'6'="June",'7'="July",'8'="August",'9'="September",'10'="October",'11'="Novomber",'12'="December")
 ```
 
-## Part 1: Density Plots
-(a) Recreate the plot below:
 
+(a) 
 ```{r}
 Tampa_Weather %>%
 ggplot(Tampa_Weather,mapping=aes(x=max_temp,fill=as.factor(month))) +
@@ -46,28 +45,28 @@ geom_histogram(color="white",binwidth = 3) +
 theme(axis.text.x = element_text(angle = 90, hjust = 1,vjust = 0.5, size = 12), 
 axis.text.y = element_text(size = 12),strip.text = element_text(size = 12),axis.title = element_text(size = 12))+ facet_wrap(~ month,labeller =as_labeller(month.names) )+theme(legend.position="none")+
 labs(x = "Maximum Temperature",y = "Number of Days",title = "Density of Hottest Days in Tampa ")+
-theme(plot.title = element_text(size = 20, face = "bold",color="tomato"))+scale_fill_manual(values=c("#450D54","#450D54","#433E85","#433E85","#2D708E","#2D708E","#1E9B8A","#1E9B8A","#1E9B8A","#C2DF23","#C2DF23","#FDE725"))
+theme(plot.title = element_text(size = 20, face = "bold",color="black"))+scale_fill_manual(values=c("#450D54","#450D54","#433E85","#433E85","#2D708E","#2D708E","#1E9B8A","#1E9B8A","#1E9B8A","#C2DF23","#C2DF23","#FDE725"))
 
 
 ```
+* According to the plot in months of **June** and **July** Tampa had most frequency of hot days.
 
-(b) Recreate the plot below:
 
+(b) 
 ```{r}
 
 ggplot(data =Tampa_Weather,mapping = aes(x = max_temp)) +
 geom_density(bw=0.5,fill="#808080", color="black",kernel="epanechnikov")+ 
 theme(axis.text.x = element_text(angle = 90, hjust = 1,vjust = 0.5, size = 10), 
  axis.text.y = element_text(size = 12),strip.text = element_text(size = 12),axis.title = element_text(size = 12))+ 
-labs(x = "Maximum Temperature",y = "Number of Days",title = "Density of Hottest Days in Tampa ")+theme(plot.title = element_text(size = 20, face = "bold",color="tomato"))+theme_minimal()
+labs(x = "Maximum Temperature",y = "Number of Days",title = "Density of Hottest Days in Tampa ")+ theme(plot.title = element_text(size = 20, face = "bold",color="tomato"))+theme_minimal()
 
 ```
-
-
-(c) Recreate the chart below:
+* In hottest days maximum of temperature achived to **90** degree of Fahrenheit. 
 
 
 
+(c) 
 ```{r  }
 
 ggplot(Tampa_Weather,aes(x=max_temp)) +
@@ -77,13 +76,15 @@ theme(axis.text.x = element_text(angle = 90, hjust = 1,vjust = 0.5, size = 12),
 labs(x = "Maximum Temperature",y = "Number of Days",title = "Density plot for each month in 2016 ")+theme(plot.title = element_text(size = 20, face = "bold",color="black"))
 
 ```
+* According to this plot it could be find in every month how many days had maximun of temperature.
+
+
 ```{r}
 library(ggridges)
 ```
 
 
-(d) Recreate the chart below:
-
+(d) 
 ```{r}
 Tampa_Weather$month<-factor(Tampa_Weather$month,levels = c("1","2","3","4","5","6","7","8","9","10","11","12"))
 Tampa_Weather<-Tampa_Weather[order(Tampa_Weather$month),]
@@ -96,25 +97,31 @@ ggplot(data=Tampa_Weather,mapping=aes(x=max_temp,y=months, fill=months))+ stat_d
 theme(title = element_text(size = 16, face = "bold"))+scale_fill_manual(values=c("#450D54","#482173","#433E85","#4C6996","#2D708E","#25858E","1e9B8A","#2CB07F","#51C56A","#85D54A","#C2DF23","#FDE725"))
 
 ```
+* This plot shows in months of **January**,**February** and **December** temperature in Tampa had a wide distribution.
 
-
+(e) 
 ```{r}
 ggplot(data=Tampa_Weather,mapping=aes(x=max_temp,y=months, fill=months))+geom_density_ridges(show.legend = FALSE)+ stat_density_ridges(quantile_lines=TRUE,quantiles=0.5,show.legend = FALSE)+labs(x = "Maximum Temperature", y = NULL,
  title = "Temperature Distribution in different months")+ theme_minimal()+
-theme(title = element_text(size = 16, face = "bold"))+scale_fill_manual(values=c("#450D54","#482173","#433E85","#4C6996","#2D708E","#25858E","1e9B8A","#2CB07F","#51C56A","#85D54A","#C2DF23","#FDE725"))
+theme(title = element_text(size = 16, face = "bold"))+scale_fill_manual(values=c("#450D54","#482173","#433E85","#4C6996","#2D708E","#25858E","1e9B8A","#1e9B8A","#1e9B8A","#85D54A","#C2DF23","#FDE725"))
 ```
+* The graph shows in *** The graph shows in **August** and **July** the temperature was maximum.
+
 
 ```{r}
 library(viridis)
 ```
 
-(f) Recreate the plot below:
-
+(f)
 ```{r}
 ggplot(Tampa_Weather,aes(x=max_temp,y=months,fill=stat(x)))+geom_density_ridges_gradient(scale=1.75,size=0.6,quantile_lines=TRUE,quantiles=0.5)+scale_fill_viridis(
                      , name = "Maximum Temperature"
                      , option = "plasma")+labs(x="Maximum Temperature in Farenheit Degree",y="Month")+theme_minimal()
 ```
+* The graph shows in **August** and **July** the temperature was maximum.
+
+
+
 
 
 ## Part 2: Visualizing Text Data
@@ -284,7 +291,7 @@ top_popular_tfidf_words %>%
     coord_flip()
 ```
 
-Conclusion
+# Conclusion
 In this project, after checking the basics features and performing some actions such as data cleansing and removing uninformative words,an exploratory analysis was begun to categorize song levels.
 
 Next,text visualizing was checked by unnesting lyrics into tokenized words so it was possible to look at lyric complexity. The results provide critical insights for the next steps of **sentiment analysis** and topic modeling.
