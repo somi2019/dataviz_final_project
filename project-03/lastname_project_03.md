@@ -28,10 +28,10 @@ sample_n(Tampa_Weather,4)
 ## # A tibble: 4 x 6
 ##    year month   day precipitation max_temp min_temp
 ##   <dbl> <dbl> <dbl>         <dbl>    <dbl>    <dbl>
-## 1  2016     7    19             0       93       77
-## 2  2016     5    28             0       89       73
-## 3  2016     9     7             0       92       76
-## 4  2016    10     5             0       92       75
+## 1  2016     2    26           0         62       49
+## 2  2016    12    26           0         85       68
+## 3  2016     4     7           0.7       79       67
+## 4  2016    10    22           0         76       58
 ```
 
 
@@ -77,6 +77,7 @@ theme(plot.title = element_text(size = 20, face = "bold",color="black"))+scale_f
 ```
 
 ![](lastname_project_03_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
+
 * According to the plot in months of **June** and **July** Tampa had most frequency of hot days.
 
 
@@ -91,6 +92,7 @@ labs(x = "Maximum Temperature",y = "Number of Days",title = "Density of Hottest 
 ```
 
 ![](lastname_project_03_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
+
 * In hottest days maximum of temperature achived to **90** degree of Fahrenheit. 
 
 
@@ -342,12 +344,14 @@ head(sample(stop_words$word, 30), 30)
 ```
 
 ```
-##  [1] "at"         "now"        "while"      "could"      "these"     
-##  [6] "keeps"      "her"        "hers"       "shan't"     "from"      
-## [11] "don't"      "being"      "whether"    "doesn't"    "right"     
-## [16] "thought"    "under"      "what"       "hereby"     "beforehand"
-## [21] "certainly"  "way"        "was"        "wanting"    "early"     
-## [26] "see"        "anything"   "are"        "alone"      "behind"
+##  [1] "couldn't"      "corresponding" "where"         "tends"        
+##  [5] "go"            "go"            "older"         "asking"       
+##  [9] "com"           "points"        "gave"          "anyhow"       
+## [13] "m"             "don't"         "because"       "there"        
+## [17] "few"           "further"       "downs"         "yet"          
+## [21] "should"        "i'll"          "yourself"      "inner"        
+## [25] "via"           "and"           "by"            "my"           
+## [29] "out"           "very"
 ```
 
 

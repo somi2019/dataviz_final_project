@@ -37,7 +37,8 @@ month.names <-c('1'="January",'2'="February",'3'="March",'4'="April",'5'="May",'
 ```
 
 
-(a) 
+
+**(A)** 
 ```{r}
 Tampa_Weather %>%
 ggplot(Tampa_Weather,mapping=aes(x=max_temp,fill=as.factor(month))) +
@@ -53,7 +54,8 @@ theme(plot.title = element_text(size = 20, face = "bold",color="black"))+scale_f
 * According to the plot in months of **June** and **July** Tampa had most frequency of hot days.
 
 
-(b) 
+
+**(B)**
 ```{r}
 
 ggplot(data =Tampa_Weather,mapping = aes(x = max_temp)) +
@@ -68,7 +70,7 @@ labs(x = "Maximum Temperature",y = "Number of Days",title = "Density of Hottest 
 
 
 
-(c) 
+**(C)** 
 ```{r  }
 
 ggplot(Tampa_Weather,aes(x=max_temp)) +
@@ -87,7 +89,8 @@ library(ggridges)
 ```
 
 
-(d) 
+
+**(D)** 
 ```{r}
 Tampa_Weather$month<-factor(Tampa_Weather$month,levels = c("1","2","3","4","5","6","7","8","9","10","11","12"))
 Tampa_Weather<-Tampa_Weather[order(Tampa_Weather$month),]
@@ -103,7 +106,9 @@ theme(title = element_text(size = 16, face = "bold"))+scale_fill_manual(values=c
 
 * This plot shows in months of **January**,**February** and **December** temperature in Tampa had a wide distribution.
 
-(e) 
+
+
+**(E)** 
 ```{r}
 ggplot(data=Tampa_Weather,mapping=aes(x=max_temp,y=months, fill=months))+geom_density_ridges(show.legend = FALSE)+ stat_density_ridges(quantile_lines=TRUE,quantiles=0.5,show.legend = FALSE)+labs(x = "Maximum Temperature", y = NULL,
  title = "Temperature Distribution in different months")+ theme_minimal()+
@@ -113,11 +118,14 @@ theme(title = element_text(size = 16, face = "bold"))+scale_fill_manual(values=c
 * The graph shows in **August** and **July** the temperature was maximum.
 
 
+
 ```{r}
 library(viridis)
 ```
 
-(f)
+
+
+**(F)**
 ```{r}
 ggplot(Tampa_Weather,aes(x=max_temp,y=months,fill=stat(x)))+geom_density_ridges_gradient(scale=1.75,size=0.6,quantile_lines=TRUE,quantiles=0.5)+scale_fill_viridis(
                      , name = "Maximum Temperature"
