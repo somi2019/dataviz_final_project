@@ -44,7 +44,7 @@ I started ploting some basic plot at first to have a general opinion about the w
 
 
 
-# conclusion
+# Conclusion
 I chose this dataset because when I was studying my bachelor I joind marathon group of my previous university and I had a memorable time those days.So his dataset could decode some new aspects of this sport for me in other countries.
 I started ploting some basic plot at first to have a general opinion about the whole topic,then shifted to some interactive plot and finally some spatial plot.bellow you can find some interesting issues which I found from these plot:
 
